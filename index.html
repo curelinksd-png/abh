@@ -6,34 +6,35 @@
     <title>مستحقات د. منصور السُلمي</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <style>
         :root {
-            --primary: #0d4a6f;
-            --primary-light: #1a6fa3;
-            --secondary: #c9a227;
-            --accent: #2e8b57;
-            --bg-light: #f8fafc;
+            --primary: #1e3a5f;
+            --primary-light: #2d5a87;
+            --secondary: #d4af37;
+            --accent: #28a745;
+            --accent2: #e74c3c;
+            --accent3: #9b59b6;
+            --bg-light: #f0f4f8;
             --bg-card: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+            --text-dark: #1a1a2e;
+            --text-muted: #6c757d;
+            --border: #dee2e6;
+            --gradient1: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #3d7ab5 100%);
+            --gradient2: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            --gradient3: linear-gradient(135deg, #28a745 0%, #5cb85c 100%);
+            --gradient4: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .dark {
-            --primary: #4da6d9;
-            --primary-light: #6bbde8;
-            --secondary: #e8c547;
-            --accent: #4ade80;
-            --bg-light: #0f172a;
-            --bg-card: #1e293b;
-            --text-dark: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --shadow: 0 4px 20px rgba(0,0,0,0.3);
-            --shadow-hover: 0 8px 30px rgba(0,0,0,0.4);
+            --primary: #4a90d9;
+            --primary-light: #6ba3e0;
+            --bg-light: #0d1b2a;
+            --bg-card: #1b2838;
+            --text-dark: #ecf0f1;
+            --text-muted: #a0aec0;
+            --border: #2d3748;
+            --shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
         * {
@@ -51,9 +52,9 @@
         }
 
         .header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: var(--gradient1);
             color: white;
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -62,17 +63,12 @@
         .header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
         }
 
         .header-content {
@@ -81,32 +77,41 @@
         }
 
         .hospital-logo {
-            width: 80px;
-            height: 80px;
-            background: white;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 4px solid var(--secondary);
         }
 
         .hospital-logo i {
-            font-size: 2.5rem;
-            color: var(--primary);
+            font-size: 3rem;
+            background: var(--gradient1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
         }
 
         .header .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            opacity: 0.95;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
         }
 
         .container {
@@ -117,9 +122,9 @@
 
         .doctor-card {
             background: var(--bg-card);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin: -3rem auto 2rem;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: -4rem auto 2rem;
             position: relative;
             z-index: 10;
             box-shadow: var(--shadow);
@@ -127,92 +132,89 @@
             align-items: center;
             gap: 1.5rem;
             flex-wrap: wrap;
-            border: 1px solid var(--border);
+            border: 2px solid transparent;
+            background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient2);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
         }
 
         .doctor-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--secondary) 0%, #d4a84b 100%);
+            width: 90px;
+            height: 90px;
+            background: var(--gradient2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
         }
 
         .doctor-avatar i {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: white;
         }
 
         .doctor-info h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
+            font-size: 1.6rem;
+            background: var(--gradient1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.25rem;
         }
 
         .doctor-info p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .section {
             background: var(--bg-card);
-            border-radius: 16px;
-            padding: 1.5rem;
+            border-radius: 20px;
+            padding: 2rem;
             margin-bottom: 1.5rem;
             box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            animation: fadeInUp 0.5s ease-out;
+            border-right: 5px solid var(--primary);
+            animation: slideIn 0.5s ease-out;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section.gold-border { border-right-color: var(--secondary); }
+        .section.green-border { border-right-color: var(--accent); }
+        .section.red-border { border-right-color: var(--accent2); }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .section-header {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 2px dashed var(--border);
         }
 
         .section-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            border-radius: 12px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient1);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
         }
 
-        .section-icon i {
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .section-icon.gold {
-            background: linear-gradient(135deg, var(--secondary) 0%, #d4a84b 100%);
-        }
-
-        .section-icon.green {
-            background: linear-gradient(135deg, var(--accent) 0%, #3cb371 100%);
-        }
+        .section-icon i { font-size: 1.6rem; color: white; }
+        .section-icon.gold { background: var(--gradient2); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); }
+        .section-icon.green { background: var(--gradient3); box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3); }
 
         .section-title {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--text-dark);
         }
@@ -221,108 +223,53 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: var(--gradient1);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
         }
 
         .content-text {
             color: var(--text-dark);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-            border-right: 4px solid var(--primary);
-        }
-
-        .pdf-container {
-            background: var(--bg-light);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-top: 1rem;
-        }
-
-        .pdf-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 0.75rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .pdf-title {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-        }
-
-        .pdf-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .pdf-btn {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .pdf-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-
-        .pdf-viewer {
-            height: 400px;
-            overflow: auto;
-            background: #525659;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem;
-            gap: 1rem;
-        }
-
-        .pdf-viewer canvas {
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(45, 90, 135, 0.08) 100%);
+            border-radius: 15px;
+            border-right: 4px solid var(--secondary);
         }
 
         .document-image-container {
             background: var(--bg-light);
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            margin-top: 1rem;
-            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .document-image-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .document-image-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: var(--gradient1);
             color: white;
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.25rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .document-image-header i {
+            font-size: 1.3rem;
         }
 
         .document-image {
@@ -331,54 +278,135 @@
             display: block;
         }
 
-        .pages-info {
-            margin-top: 1rem;
-        }
+        .pages-info { margin-top: 1rem; }
 
         .page-item {
             display: flex;
-            gap: 0.75rem;
-            padding: 0.75rem 1rem;
-            background: var(--bg-light);
-            border-radius: 10px;
-            margin-bottom: 0.5rem;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(244, 208, 63, 0.12) 100%);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
             align-items: flex-start;
+            border-right: 3px solid var(--secondary);
         }
 
         .page-item .page-label {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
+            background: var(--gradient2);
+            color: #1a1a2e;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             flex-shrink: 0;
             white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
         }
 
         .page-item .page-desc {
             color: var(--text-dark);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        .pdf-loading {
+        .tabs {
             display: flex;
-            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.9rem 1.5rem;
+            border: none;
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            color: var(--text-dark);
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            height: 100%;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            background: var(--gradient1);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
         }
 
-        .pdf-loading i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: spin 1s linear infinite;
+        .tab-btn.active {
+            background: var(--gradient1);
+            color: white;
+            box-shadow: 0 5px 20px rgba(30, 58, 95, 0.4);
         }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* أزرار فتح ملفات PDF */
+        .pdf-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .pdf-open-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--gradient4);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .pdf-open-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(231, 76, 60, 0.5);
+        }
+
+        .pdf-open-btn i {
+            font-size: 1.4rem;
+        }
+
+        .pdf-open-btn.green {
+            background: var(--gradient3);
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .pdf-open-btn.green:hover {
+            box-shadow: 0 8px 30px rgba(40, 167, 69, 0.5);
+        }
+
+        .pdf-open-btn.gold {
+            background: var(--gradient2);
+            color: #1a1a2e;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .pdf-open-btn.gold:hover {
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .pdf-open-btn.blue {
+            background: var(--gradient1);
+            box-shadow: 0 5px 20px rgba(30, 58, 95, 0.3);
+        }
+
+        .pdf-open-btn.blue:hover {
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.5);
         }
 
         .deductions-list {
@@ -390,130 +418,66 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 0.75rem 1rem;
-            background: var(--bg-light);
-            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.08) 0%, rgba(192, 57, 43, 0.12) 100%);
+            border-radius: 12px;
             margin-bottom: 0.5rem;
             transition: all 0.3s ease;
+            border-right: 3px solid var(--accent2);
         }
 
         .deductions-list li:hover {
             transform: translateX(-5px);
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
         }
 
         .deductions-list li i {
-            color: var(--secondary);
-            font-size: 1.1rem;
+            color: var(--accent2);
+            font-size: 1.2rem;
         }
 
         .info-box {
-            background: linear-gradient(135deg, rgba(13,74,111,0.1) 0%, rgba(26,111,163,0.1) 100%);
-            border: 1px solid var(--primary);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-top: 1rem;
-        }
-
-        .dark .info-box {
-            background: linear-gradient(135deg, rgba(77,166,217,0.1) 0%, rgba(107,189,232,0.1) 100%);
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1) 0%, rgba(92, 184, 92, 0.15) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .info-box h4 {
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .info-box p {
             color: var(--text-dark);
-            font-size: 0.95rem;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 0.75rem 1.25rem;
-            border: 2px solid var(--border);
-            background: var(--bg-card);
-            color: var(--text-dark);
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tab-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            font-size: 1rem;
         }
 
         .footer {
             text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            padding: 2.5rem;
+            background: var(--gradient1);
+            color: white;
+            margin-top: 2rem;
         }
 
         .footer .hospital-name {
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: 700;
         }
 
         @media (max-width: 600px) {
-            .header h1 {
-                font-size: 1.4rem;
-            }
-
-            .doctor-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .pdf-viewer {
-                height: 300px;
-            }
-
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tab-btn {
-                width: 100%;
-                justify-content: center;
-            }
+            .header h1 { font-size: 1.5rem; }
+            .doctor-card { flex-direction: column; text-align: center; }
+            .tabs { flex-direction: column; }
+            .tab-btn { width: 100%; justify-content: center; }
+            .pdf-button-container { flex-direction: column; }
+            .pdf-open-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -524,7 +488,7 @@
                 <i class="fas fa-hospital"></i>
             </div>
             <h1>مستشفى أبها الخاص</h1>
-            <p class="subtitle">بيان مستحقات الطبيب</p>
+            <p class="subtitle"><i class="fas fa-file-medical-alt"></i> بيان مستحقات الطبيب</p>
         </div>
     </header>
 
@@ -540,7 +504,7 @@
         </div>
 
         <!-- الفترة الأولى -->
-        <section class="section" style="animation-delay: 0.1s;">
+        <section class="section">
             <div class="section-header">
                 <div class="section-icon">
                     <i class="fas fa-file-contract"></i>
@@ -555,7 +519,6 @@
                 بيان الموظف الذي يوضح فترة عمل الطبيب لدى مستشفى أبها الخاص، وتم استلامه لكامل مستحقاته بالمخالصة المدرجة أدناه.
             </div>
 
-            <!-- صورة بيان الموظف للفترة الأولى -->
             <div class="document-image-container">
                 <div class="document-image-header">
                     <i class="fas fa-file-alt"></i>
@@ -564,7 +527,6 @@
                 <img src="https://pfst.cf2.poecdn.net/base/image/7a5850bb81876665bc8a2fdb890e95c2947e0c319a7368dab6cc0ce669d108f1?w=974&h=541" alt="بيان موظف ونموذج علاوة" class="document-image">
             </div>
 
-            <!-- صورة نموذج المخالصة -->
             <div class="document-image-container">
                 <div class="document-image-header">
                     <i class="fas fa-file-contract"></i>
@@ -575,7 +537,7 @@
         </section>
 
         <!-- الفترة الثانية -->
-        <section class="section" style="animation-delay: 0.2s;">
+        <section class="section gold-border">
             <div class="section-header">
                 <div class="section-icon gold">
                     <i class="fas fa-coins"></i>
@@ -612,44 +574,28 @@
             </div>
 
             <div id="tab-cash" class="tab-content active">
-                <div class="pdf-container">
-                    <div class="pdf-header">
-                        <div class="pdf-title">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>مستحقات النقدي والآجل</span>
-                        </div>
-                        <div class="pdf-actions">
-                            <a href="https://pfst.cf2.poecdn.net/base/application/c9d1afbe8f281255a394fbe1b2c85d744db6090e94ae4c8ed8c0adcce7f1a056" target="_blank" class="pdf-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                فتح
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pdf-viewer" id="pdf-cash"></div>
+                <div class="pdf-button-container">
+                    <a href="https://pfst.cf2.poecdn.net/base/application/c9d1afbe8f281255a394fbe1b2c85d744db6090e94ae4c8ed8c0adcce7f1a056" target="_blank" class="pdf-open-btn">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>فتح ملف مستحقات النقدي والآجل</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
 
             <div id="tab-health" class="tab-content">
-                <div class="pdf-container">
-                    <div class="pdf-header">
-                        <div class="pdf-title">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>مستحقات وزارة الصحة</span>
-                        </div>
-                        <div class="pdf-actions">
-                            <a href="https://pfst.cf2.poecdn.net/base/application/6d877fe5e3e7628af056ff2a9f3c323d3f35031311c60595880ae5482e1c9561" target="_blank" class="pdf-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                فتح
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pdf-viewer" id="pdf-health"></div>
+                <div class="pdf-button-container">
+                    <a href="https://pfst.cf2.poecdn.net/base/application/6d877fe5e3e7628af056ff2a9f3c323d3f35031311c60595880ae5482e1c9561" target="_blank" class="pdf-open-btn green">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>فتح ملف مستحقات وزارة الصحة</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- الفترة الثالثة -->
-        <section class="section" style="animation-delay: 0.3s;">
+        <section class="section green-border">
             <div class="section-header">
                 <div class="section-icon green">
                     <i class="fas fa-file-signature"></i>
@@ -664,7 +610,6 @@
                 يوضح البيان المدرج تاريخ انضمام الطبيب من جديد للمنشأة بعقد جديد.
             </div>
 
-            <!-- صورة بيان الموظف للفترة الثالثة -->
             <div class="document-image-container">
                 <div class="document-image-header">
                     <i class="fas fa-file-alt"></i>
@@ -673,25 +618,17 @@
                 <img src="https://pfst.cf2.poecdn.net/base/image/24f89aa507e55b1e30f92520ea629de489349a02ec81a3255d138de93d6c5032?w=865&h=376" alt="بيان موظف ونموذج علاوة" class="document-image">
             </div>
 
-            <div class="pdf-container">
-                <div class="pdf-header">
-                    <div class="pdf-title">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>عقد العمل</span>
-                    </div>
-                    <div class="pdf-actions">
-                        <a href="https://pfst.cf2.poecdn.net/base/application/8dcd4eecca9ee176c5d1146426b1be5411e93cee14c8e79c6d6b9c365399fa19" target="_blank" class="pdf-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            فتح
-                        </a>
-                    </div>
-                </div>
-                <div class="pdf-viewer" id="pdf-contract"></div>
+            <div class="pdf-button-container">
+                <a href="https://pfst.cf2.poecdn.net/base/application/8dcd4eecca9ee176c5d1146426b1be5411e93cee14c8e79c6d6b9c365399fa19" target="_blank" class="pdf-open-btn blue">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>فتح ملف عقد العمل</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
         </section>
 
         <!-- النماذج -->
-        <section class="section" style="animation-delay: 0.4s;">
+        <section class="section gold-border">
             <div class="section-header">
                 <div class="section-icon gold">
                     <i class="fas fa-file-invoice-dollar"></i>
@@ -736,20 +673,12 @@
                 <div class="content-text">
                     مستحقات الطبيب المحولة له لمرضى النقدي والآجل لشركات التأمين
                 </div>
-                <div class="pdf-container">
-                    <div class="pdf-header">
-                        <div class="pdf-title">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>نموذج (1)</span>
-                        </div>
-                        <div class="pdf-actions">
-                            <a href="https://pfst.cf2.poecdn.net/base/application/c273c7120c999393fc871683a2ed2642db0f29d43d295305f9097e4d58073e8a" target="_blank" class="pdf-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                فتح
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pdf-viewer" id="pdf-model1"></div>
+                <div class="pdf-button-container">
+                    <a href="https://pfst.cf2.poecdn.net/base/application/c273c7120c999393fc871683a2ed2642db0f29d43d295305f9097e4d58073e8a" target="_blank" class="pdf-open-btn gold">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>فتح نموذج (1) - النقدي والآجل</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
 
@@ -757,28 +686,20 @@
                 <div class="content-text">
                     مستحقات الطبيب المحولة لمرضى وزارة الصحة
                 </div>
-                <div class="pdf-container">
-                    <div class="pdf-header">
-                        <div class="pdf-title">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>نموذج (2)</span>
-                        </div>
-                        <div class="pdf-actions">
-                            <a href="https://pfst.cf2.poecdn.net/base/application/aa4d4550c9b6b31f103facf3541f0c2aa2d9aa1624a1108b47a376ee63baccda" target="_blank" class="pdf-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                فتح
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pdf-viewer" id="pdf-model2"></div>
+                <div class="pdf-button-container">
+                    <a href="https://pfst.cf2.poecdn.net/base/application/aa4d4550c9b6b31f103facf3541f0c2aa2d9aa1624a1108b47a376ee63baccda" target="_blank" class="pdf-open-btn green">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>فتح نموذج (2) - وزارة الصحة</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- آلية احتساب النسب -->
-        <section class="section" style="animation-delay: 0.5s;">
+        <section class="section red-border">
             <div class="section-header">
-                <div class="section-icon">
+                <div class="section-icon" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);">
                     <i class="fas fa-calculator"></i>
                 </div>
                 <h3 class="section-title">آلية احتساب النسب</h3>
@@ -818,11 +739,11 @@
                 </p>
             </div>
         </section>
-
-        <footer class="footer">
-            <p>جميع الحقوق محفوظة © <span class="hospital-name">مستشفى أبها الخاص</span></p>
-        </footer>
     </div>
+
+    <footer class="footer">
+        <p>جميع الحقوق محفوظة © <span class="hospital-name">مستشفى أبها الخاص</span></p>
+    </footer>
 
     <script>
         // Dark mode detection
@@ -830,90 +751,24 @@
             document.documentElement.classList.add('dark');
         }
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
+            document.documentElement.classList.toggle('dark', event.matches);
         });
 
         // Tab switching for period 2
         function switchTab(tabId, btn) {
-            document.querySelectorAll('#tab-cash, #tab-health').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('#tab-cash, #tab-health').forEach(tab => tab.classList.remove('active'));
             document.getElementById('tab-' + tabId).classList.add('active');
-
-            btn.parentElement.querySelectorAll('.tab-btn').forEach(b => {
-                b.classList.remove('active');
-            });
+            btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            // Load PDF when tab is activated
-            if (tabId === 'health' && !document.getElementById('pdf-health').hasChildNodes()) {
-                loadPDF('https://pfst.cf2.poecdn.net/base/application/6d877fe5e3e7628af056ff2a9f3c323d3f35031311c60595880ae5482e1c9561', 'pdf-health');
-            }
         }
 
         // Tab switching for models
         function switchTab2(tabId, btn) {
-            document.querySelectorAll('#tab2-model1, #tab2-model2').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('#tab2-model1, #tab2-model2').forEach(tab => tab.classList.remove('active'));
             document.getElementById('tab2-' + tabId).classList.add('active');
-
-            btn.parentElement.querySelectorAll('.tab-btn').forEach(b => {
-                b.classList.remove('active');
-            });
+            btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            // Load PDF when tab is activated
-            if (tabId === 'model2' && !document.getElementById('pdf-model2').hasChildNodes()) {
-                loadPDF('https://pfst.cf2.poecdn.net/base/application/aa4d4550c9b6b31f103facf3541f0c2aa2d9aa1624a1108b47a376ee63baccda', 'pdf-model2');
-            }
         }
-
-        // PDF.js setup
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-        async function loadPDF(url, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '<div class="pdf-loading"><i class="fas fa-spinner"></i><span>جاري تحميل المستند...</span></div>';
-
-            try {
-                const loadingTask = pdfjsLib.getDocument(url);
-                const pdf = await loadingTask.promise;
-                container.innerHTML = '';
-
-                for (let i = 1; i <= pdf.numPages; i++) {
-                    const page = await pdf.getPage(i);
-                    const scale = 1.5;
-                    const viewport = page.getViewport({ scale });
-
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    await page.render({
-                        canvasContext: context,
-                        viewport: viewport
-                    }).promise;
-
-                    container.appendChild(canvas);
-                }
-            } catch (error) {
-                container.innerHTML = '<div class="pdf-loading"><i class="fas fa-exclamation-triangle" style="animation:none;color:#f59e0b;"></i><span>تعذر تحميل المستند</span></div>';
-                console.log('PDF loading error:', JSON.stringify(error.message));
-            }
-        }
-
-        // Load initial PDFs
-        document.addEventListener('DOMContentLoaded', function() {
-            loadPDF('https://pfst.cf2.poecdn.net/base/application/c9d1afbe8f281255a394fbe1b2c85d744db6090e94ae4c8ed8c0adcce7f1a056', 'pdf-cash');
-            loadPDF('https://pfst.cf2.poecdn.net/base/application/8dcd4eecca9ee176c5d1146426b1be5411e93cee14c8e79c6d6b9c365399fa19', 'pdf-contract');
-            loadPDF('https://pfst.cf2.poecdn.net/base/application/c273c7120c999393fc871683a2ed2642db0f29d43d295305f9097e4d58073e8a', 'pdf-model1');
-        });
     </script>
 </body>
 </html>
